@@ -10,4 +10,9 @@ RUN curl --progress-bar -sLo /tmp/ycsb-${YCSB_VERSION}.tar.gz  https://github.co
   && tar -xvf /tmp/ycsb-${YCSB_VERSION}.tar.gz \
   && mv ycsb-${YCSB_VERSION} /opt/ycsb \
   && rm -rf /tmp/ycsb-${YCSB_VERSION}.tar.gz \
-  && ln -s /opt/ycsb/bin/ycsb /usr/local/bin/ycsb
+  && ln -s /opt/ycsb/bin/ycsb /usr/local/bin/ycsb \
+  && add-apt-repository ppa:fkrull/deadsnakes \
+  && apt-get update \
+  && apt-get install -y python2.7 \
+  && apt-get clean \
+  && ln -s /usr/bin/python2.7 /usr/bin/python

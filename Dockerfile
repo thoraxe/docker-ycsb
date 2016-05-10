@@ -1,9 +1,8 @@
-FROM webdizz/baseimage-java8:8u60
+FROM centos:7
 
-MAINTAINER Izzet Mustafaiev "izzet@mustafaiev.com"
+MAINTAINER Erik Jacobs "erikmjacobs@gmail.com"
 
-ENV DEBIAN_FRONTEND noninteractive
-ENV YCSB_VERSION 0.3.0
+ENV YCSB_VERSION 0.8.0
 
 RUN curl --progress-bar -sLo /tmp/ycsb-${YCSB_VERSION}.tar.gz  https://github.com/brianfrankcooper/YCSB/releases/download/${YCSB_VERSION}/ycsb-${YCSB_VERSION}.tar.gz \
   && cd /opt \

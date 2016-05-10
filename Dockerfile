@@ -4,6 +4,7 @@ MAINTAINER Erik Jacobs "erikmjacobs@gmail.com"
 
 ENV YCSB_VERSION 0.8.0
 
+RUN yum -y install java
 RUN curl --progress-bar -sLo /tmp/ycsb-${YCSB_VERSION}.tar.gz  https://github.com/brianfrankcooper/YCSB/releases/download/${YCSB_VERSION}/ycsb-${YCSB_VERSION}.tar.gz \
   && cd /opt \
   && tar -xvf /tmp/ycsb-${YCSB_VERSION}.tar.gz \
